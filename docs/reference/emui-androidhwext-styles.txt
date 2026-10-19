@@ -1,0 +1,30 @@
+# androidhwext（EMUI 扩展框架资源包）里被本项目的样式引用的三条
+#
+# 来源：Huawei_HMA-AL00 EmotionUI 11.0.0.155(C00E139R3P6) full azurekiln
+#   镜像内路径 /system/framework/framework-res-hwext.apk
+#   21639272 字节
+#   sha256 683f4d87662f3ea26fec3d0de6a4988c6b2307988742751b7214870ad4cc4a0c
+#   包名 androidhwext，资源包 id 0x02
+#
+# 取出方式：
+#   python tools/erofs/erofs-extract.py extract <system.img> \
+#       /system/framework/framework-res-hwext.apk <输出>
+#   aapt2 dump resources <输出>
+#
+# 对照的 AOSP 底座（同一个镜像的 /system/framework/framework-res.apk）：
+#   resource 0x0103006b style/Theme.Holo                   # 0x02060008 的 parent
+#   resource 0x0103006c style/Theme.Holo.NoActionBar       # 本移植选用的替代
+#   resource 0x010300f0 style/Theme.Holo.Light.NoActionBar # 浅色侧的替代
+
+    resource 0x02060008 style/Theme.Emui PUBLIC
+      () (style) size=444 parent=0x0103006b
+        0x01010030=@color/emui_color_fg
+        0x01010031=@color/emui_color_bg
+    resource 0x020600cd style/Theme.Emui.Dark PUBLIC
+      () (style) size=209 parent=style/Theme.Emui (0x02060008)
+        0x01010030=@color/emui_color_fg_translucent
+        0x01010031=@color/emui_color_bg_translucent
+    resource 0x02060189 style/Theme.Emui.Dark.Emphasize PUBLIC
+      () (style) size=171 parent=style/Theme.Emui.Dark (0x020600cd)
+        0x01010030=@color/emui_color_fg_dark
+        0x01010031=@color/emui_color_bg_dark

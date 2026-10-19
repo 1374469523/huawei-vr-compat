@@ -1,0 +1,295 @@
+== platform classes provided by the compat layer: 40
+
+（实现进度：见每行末尾的 [已实现] / [接口占位] / [不可用] 标注；
+静态/实例归属以 docs/PLATFORM_INVOKE_MODES.txt 为准，该文件由六棵解码树的
+smali 里真实的 invoke-static / invoke-virtual / invoke-interface 抽取。）
+
+CLASS android/vrsystem/IVRSystemServiceManager
+     method Z isVRMode()
+CLASS com/huawei/android/app/ActionBarEx
+     method I getDragAnimationStage(Landroid/app/ActionBar;)
+     method V setAppbarBackground(Landroid/app/ActionBar;, Landroid/graphics/drawable/Drawable;)
+     method V setStartIcon(Landroid/app/ActionBar;, Z, Landroid/graphics/drawable/Drawable;, Landroid/view/View$OnClickListener;)
+CLASS com/huawei/android/app/HiEventEx
+     method Lcom/huawei/android/app/HiEventEx; putAppInfo(Landroid/content/Context;)
+     method V <init>(I)
+CLASS com/huawei/android/app/HiViewEx
+     method Lcom/huawei/android/app/HiEventEx; byJson(I, Lorg/json/JSONObject;)
+     method V report(Lcom/huawei/android/app/HiEventEx;)
+CLASS com/huawei/android/app/PackageManagerEx
+     method Z hasHwSystemFeature(Ljava/lang/String;)
+     method [Landroid/content/pm/FeatureInfo; getHwSystemAvailableFeatures()
+CLASS com/huawei/android/content/ContextEx
+     method Landroid/content/Intent; registerReceiverAsUser(Landroid/content/Context;, Landroid/content/BroadcastReceiver;, Landroid/os/UserHandle;, Landroid/content/IntentFilter;, Ljava/lang/String;, Landroid/os/Handler;)
+CLASS com/huawei/android/content/pm/ApplicationInfoEx
+     method I getHwFlags()
+     method V <init>(Landroid/content/pm/ApplicationInfo;)
+CLASS com/huawei/android/feature/compat/InstallCompat
+     method I install(Landroid/content/Context;)
+CLASS com/huawei/android/feature/install/InstallRequest
+     method Lcom/huawei/android/feature/install/InstallRequest$Builder; newBuilder()
+CLASS com/huawei/android/feature/install/InstallRequest$Builder
+     method Lcom/huawei/android/feature/install/InstallRequest$Builder; addModule(Ljava/lang/Object;)
+     method Lcom/huawei/android/feature/install/InstallRequest; build()
+CLASS com/huawei/android/feature/install/InstallStorageManager
+     method Ljava/io/File; getIsolatedDir(Landroid/content/Context;)
+     method Ljava/io/File; getUnverifyApksDir(Landroid/content/Context;)
+     method V deleteFile(Ljava/io/File;)
+     method V initBaseDir(Ljava/io/File;)
+CLASS com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager
+     method J getInstalledModuleVersionCode(Ljava/lang/String;)
+     method Ljava/util/Set; getInstallModules()
+     method V <init>(Landroid/content/Context;)
+     method V startInstallBackup(Lcom/huawei/android/feature/install/InstallRequest;, Lcom/huawei/android/feature/install/localinstall/IFeatureLocalInstall;)
+CLASS com/huawei/android/feature/install/localinstall/FeatureLocalInstallRequest
+     method V <init>(Ljava/lang/String;, Ljava/lang/String;, Ljava/lang/String;)
+CLASS com/huawei/android/feature/module/DynamicModule
+     method Ljava/lang/Object; getClassInstance(Ljava/lang/String;, Ljava/util/List;)
+     method V <init>(Ljava/lang/String;)
+CLASS com/huawei/android/feature/module/DynamicModuleInfo
+     field J mVersionCode
+     field Ljava/lang/String; mModuleName
+CLASS com/huawei/android/feature/module/DynamicModuleManager
+     method Lcom/huawei/android/feature/module/DynamicModuleInfo; parseApk(Landroid/content/Context;, Ljava/lang/String;)
+CLASS com/huawei/android/fsm/HwFoldScreenManagerEx
+     method I getDisplayMode()
+     method V registerFoldDisplayMode(Lcom/huawei/android/fsm/HwFoldScreenManagerEx$FoldDisplayModeListener;)
+     method Z isFoldable()
+CLASS com/huawei/android/hardware/input/InputManagerEx
+     method I getInjectInputEventModeAsync()
+     method I getInjectInputEventModeWaitForFinish()
+     method Z injectInputEvent(Landroid/hardware/input/InputManager;, Landroid/view/InputEvent;, I)
+     method Z injectInputEventByDisplayId(Landroid/view/InputEvent;, I, I, Landroid/content/Context;)
+CLASS com/huawei/android/immersion/ImmersionStyle
+     method I getPrimaryColor(Landroid/content/Context;)
+     method I getSuggestionForgroundColorStyle(I)
+CLASS com/huawei/android/media/AudioServiceEx
+     method Lcom/huawei/android/media/AudioServiceEx; getInstance()
+     method V setBluetoothA2dpOn(Z)
+CLASS com/huawei/android/media/AudioSystemEx
+     method I setParameters(Ljava/lang/String;)
+CLASS com/huawei/android/os/BuildEx$VERSION
+     field I EMUI_SDK_INT
+CLASS com/huawei/android/os/PowerManagerEx
+     method V setTemporaryScreenAutoBrightnessSetting(I)
+     method V setTemporaryScreenBrightnessSetting(I)
+     method Z isInteractive()
+CLASS com/huawei/android/os/ServiceManagerEx
+     method V addService(Ljava/lang/String;, Landroid/os/IBinder;)
+CLASS com/huawei/android/os/SystemPropertiesEx
+     method I getInt(Ljava/lang/String;, I)
+     method Ljava/lang/String; get(Ljava/lang/String;)
+     method Ljava/lang/String; get(Ljava/lang/String;, Ljava/lang/String;)
+     method V set(Ljava/lang/String;, Ljava/lang/String;)
+     method Z getBoolean(Ljava/lang/String;, Z)
+CLASS com/huawei/android/os/UEventObserverEx
+     method V <init>()
+     method V startObserving(Ljava/lang/String;)
+     method V stopObserving()
+CLASS com/huawei/android/os/UEventObserverEx$UEvent
+     method Ljava/lang/String; get(Ljava/lang/String;)
+CLASS com/huawei/android/os/UserHandleEx
+     field Landroid/os/UserHandle; ALL
+CLASS com/huawei/android/provider/SettingsEx$Systemex
+     method F getFloat(Landroid/content/ContentResolver;, Ljava/lang/String;, F)
+     method I getInt(Landroid/content/ContentResolver;, Ljava/lang/String;, I)
+     method Z putInt(Landroid/content/ContentResolver;, Ljava/lang/String;, I)
+CLASS com/huawei/android/telephony/PhoneStateListenerEx
+     method V <init>()
+     method V onSignalStrengthsChanged(Landroid/telephony/SignalStrength;)
+CLASS com/huawei/android/telephony/PreciseCallStateEx
+     method I getDisconnectCause(Lcom/huawei/android/telephony/PreciseCallStateEx;)
+     method I getForegroundCallState(Lcom/huawei/android/telephony/PreciseCallStateEx;)
+     method I getPreciseDisconnectCause(Lcom/huawei/android/telephony/PreciseCallStateEx;)
+     method I getRingingCallState(Lcom/huawei/android/telephony/PreciseCallStateEx;)
+CLASS com/huawei/android/telephony/ServiceStateEx
+     method I getConfigRadioTechnology(Landroid/telephony/ServiceState;)
+CLASS com/huawei/android/util/HwNotchSizeUtil
+     method Z hasNotchInScreen()
+     method [I getNotchSize()
+CLASS com/huawei/android/util/NoExtAPIException
+     method Ljava/lang/String; getMessage()
+CLASS com/huawei/android/view/WindowManagerEx$LayoutParamsEx
+     method V <init>(Landroid/view/WindowManager$LayoutParams;)
+     method V addHwFlags(I)
+CLASS com/huawei/android/vrsystem/IVRSystemServiceManagerEx
+     method I getHelmetBattery(Landroid/content/Context;)
+     method Lcom/huawei/android/vrsystem/IVRSystemServiceManagerEx; create(Landroid/content/Context;)
+     method Ljava/lang/String; getContactName(Landroid/content/Context;, Ljava/lang/String;)
+     method V registerExpandListener(Landroid/content/Context;, Landroid/vrsystem/IVRListener;)
+     method Z createVrDisplay(Ljava/lang/String;, [I, Landroid/content/Context;)
+     method Z destroyAllVrDisplay(Landroid/content/Context;)
+     method Z destroyVrDisplay(Ljava/lang/String;, Landroid/content/Context;)
+     method Z isVRApplication(Landroid/content/Context;, Ljava/lang/String;)
+     method Z isVRMode()
+CLASS com/huawei/android/vrsystem/VrTouchInterfaceEx
+     method Lcom/huawei/android/vrsystem/VrTouchInterfaceEx; getInstance()
+     method V registerInputEventCallback(Landroid/os/IBinder;, Landroid/os/Looper;, Lcom/huawei/android/vrsystem/VrTouchInterfaceEx$VrInputEventCallback;)
+     method V setDefaultDisplayPowerMode(I)
+     method V unregisterInputEventCallback()
+CLASS com/huawei/nearbysdk/NearbyAdapter
+     method V createInstance(Landroid/content/Context;, Lcom/huawei/nearbysdk/NearbyAdapterCallback;)
+     method V releaseInstance()
+     method Z subscribeDevice(Lcom/huawei/nearbysdk/closeRange/CloseRangeDeviceFilter;, Lcom/huawei/nearbysdk/closeRange/CloseRangeDeviceListener;)
+     method Z unSubscribeDevice(Lcom/huawei/nearbysdk/closeRange/CloseRangeDeviceFilter;)
+CLASS com/huawei/nearbysdk/closeRange/CloseRangeBusinessType
+     field Lcom/huawei/nearbysdk/closeRange/CloseRangeBusinessType; iConnect
+CLASS com/huawei/nearbysdk/closeRange/CloseRangeDeviceFilter
+     method Lcom/huawei/nearbysdk/closeRange/CloseRangeDeviceFilter; buildFilter(Lcom/huawei/nearbysdk/closeRange/CloseRangeBusinessType;, Ljava/lang/String;)
+
+== shipped inside an apk (no work): 155
+    android/vr/IVrServiceManager
+    android/vrsystem/IVRListener
+    android/vrsystem/IVRListener$Default
+    android/vrsystem/IVRListener$Stub
+    android/vrsystem/IVRListener$Stub$Proxy
+    android/vrsystem/IVRSystemService
+    android/vrsystem/IVRSystemService$Default
+    android/vrsystem/IVRSystemService$Stub
+    android/vrsystem/IVRSystemService$Stub$Proxy
+    android/vrsystem/IVRSystemServiceManager
+    com/huawei/android/download/BuildConfig
+    com/huawei/android/download/R
+    com/huawei/android/download/R$string
+    com/huawei/android/feature/BuildConfig
+    com/huawei/android/feature/IDynamicInstall
+    com/huawei/android/feature/IDynamicInstall$Stub
+    com/huawei/android/feature/IDynamicInstall$Stub$Proxy
+    com/huawei/android/feature/IDynamicInstallCallback
+    com/huawei/android/feature/IDynamicInstallCallback$Stub
+    com/huawei/android/feature/IDynamicInstallCallback$Stub$Proxy
+    com/huawei/android/feature/R
+    com/huawei/android/feature/compat/FeatureCompatVersionApiFactory
+    com/huawei/android/feature/compat/InstallCompat
+    com/huawei/android/feature/compat/InstallCompat$1
+    com/huawei/android/feature/compat/InstallCompat$2
+    com/huawei/android/feature/compat/InstallCompat$3
+    com/huawei/android/feature/compat/InstallCompat$4
+    com/huawei/android/feature/compat/InstallCompateApplication
+    com/huawei/android/feature/compat/V14Compat
+    com/huawei/android/feature/compat/V23Compat
+    com/huawei/android/feature/compat/V26Compat
+    com/huawei/android/feature/compat/adapter/CompatUtils
+    com/huawei/android/feature/compat/adapter/CompatUtilsV1
+    com/huawei/android/feature/compat/adapter/V21
+    com/huawei/android/feature/compat/adapter/V22
+    com/huawei/android/feature/compat/adapter/V23
+    com/huawei/android/feature/compat/adapter/V24
+    com/huawei/android/feature/compat/adapter/V25
+    com/huawei/android/feature/compat/adapter/V26
+    com/huawei/android/feature/compat/adapter/V27
+    com/huawei/android/feature/compat/adapter/V28
+    com/huawei/android/feature/compat/adapter/VersionApi
+    com/huawei/android/feature/compat/adapter/VersionApiFactory
+    com/huawei/android/feature/compat/adapter/VersionApiReference
+    com/huawei/android/feature/hff/AbiUtils
+    com/huawei/android/feature/hff/HFFInstallManager
+    com/huawei/android/feature/hff/SplitsInfo
+    com/huawei/android/feature/install/BasePackageInfoManager
+    com/huawei/android/feature/install/FeatureApkInfo
+    com/huawei/android/feature/install/FeatureDownloadInfo
+    com/huawei/android/feature/install/FeatureInstallManager
+    com/huawei/android/feature/install/FeatureInstallManager$1
+    com/huawei/android/feature/install/FeatureInstallStorageManager
+    com/huawei/android/feature/install/FeatureStateUpdateObserver
+    com/huawei/android/feature/install/IDynamicFeatureInstaller
+    com/huawei/android/feature/install/IFeatureInstall
+    com/huawei/android/feature/install/InstallBgExecutor
+    com/huawei/android/feature/install/InstallException
+    com/huawei/android/feature/install/InstallManager
+    com/huawei/android/feature/install/InstallManager$Type
+    com/huawei/android/feature/install/InstallManagerFactory
+    com/huawei/android/feature/install/InstallRequest
+    com/huawei/android/feature/install/InstallRequest$Builder
+    com/huawei/android/feature/install/InstallSessionState
+    com/huawei/android/feature/install/InstallStateUpdateObserver
+    com/huawei/android/feature/install/InstallStateUpdatedListener
+    com/huawei/android/feature/install/InstallStorageManager
+    com/huawei/android/feature/install/InstallThreadFactory
+    com/huawei/android/feature/install/InstallUpdate
+    com/huawei/android/feature/install/config/FeatureInstallConfig
+    com/huawei/android/feature/install/config/FeatureInstallConfig$1
+    com/huawei/android/feature/install/isolated/IsolatedDynamicModule
+    com/huawei/android/feature/install/isolated/IsolatedFeatureInstaller
+    com/huawei/android/feature/install/isolated/IsolationClassLoader
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager$1
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager$2
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager$NotifyBeginRunnable
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager$NotifyEndRunnable
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallManager$NotifyRunnable
+    com/huawei/android/feature/install/localinstall/FeatureLocalInstallRequest
+    com/huawei/android/feature/install/localinstall/IFeatureLocalInstall
+    com/huawei/android/feature/install/localinstall/LocalFilePathParser
+    com/huawei/android/feature/install/localinstall/PackagePathParser
+    com/huawei/android/feature/install/localinstall/PathFactory
+    com/huawei/android/feature/install/localinstall/PathParser
+    com/huawei/android/feature/install/nonisolated/HWFeatureCompat
+    com/huawei/android/feature/install/nonisolated/NonIsolatedDynamicModule
+    com/huawei/android/feature/install/nonisolated/NonIsolatedFeatureInstaller
+    com/huawei/android/feature/install/nonisolated/SplitDirInfo
+    com/huawei/android/feature/install/signature/FeatureSignatureCompat
+    com/huawei/android/feature/install/signature/FeatureSignatureVerify
+    com/huawei/android/feature/model/InstallErrorCode
+    com/huawei/android/feature/model/InstallSessionStatus
+    com/huawei/android/feature/module/DynamicFeatureState
+    com/huawei/android/feature/module/DynamicModule
+    com/huawei/android/feature/module/DynamicModuleInfo
+    com/huawei/android/feature/module/DynamicModuleInternal
+    com/huawei/android/feature/module/DynamicModuleInternal$NativeZipEntry
+    com/huawei/android/feature/module/DynamicModuleManager
+    com/huawei/android/feature/module/DynamicParams
+    com/huawei/android/feature/tasks/ITaskStatusNotify
+    com/huawei/android/feature/tasks/OnCompleteListener
+    com/huawei/android/feature/tasks/OnFailureListener
+    com/huawei/android/feature/tasks/OnSuccessListener
+    com/huawei/android/feature/tasks/RuntimeExecutionException
+    com/huawei/android/feature/tasks/Task
+    com/huawei/android/feature/tasks/TaskCompletedStatusNotify
+    com/huawei/android/feature/tasks/TaskCompletedStatusNotify$1
+    com/huawei/android/feature/tasks/TaskExcutor
+    com/huawei/android/feature/tasks/TaskExecutors
+    com/huawei/android/feature/tasks/TaskExecutors$MainThreadExecutor
+    com/huawei/android/feature/tasks/TaskFailedStatusNotify
+    com/huawei/android/feature/tasks/TaskFailedStatusNotify$1
+    com/huawei/android/feature/tasks/TaskHolder
+    com/huawei/android/feature/tasks/TaskImpl
+    com/huawei/android/feature/tasks/TaskStatusNotifyQueue
+    com/huawei/android/feature/tasks/TaskSuccessedStatusNotify
+    com/huawei/android/feature/tasks/TaskSuccessedStatusNotify$1
+    com/huawei/android/feature/tasks/Tasks
+    com/huawei/android/feature/tasks/Tasks$CountDownLatchManager
+    com/huawei/android/feature/utils/CommonUtils
+    com/huawei/android/feature/utils/HiPkgSignManager
+    com/huawei/android/feature/utils/ReflectUtils
+    com/huawei/android/hms/base/R
+    com/huawei/android/hms/base/R$color
+    com/huawei/android/hms/base/R$dimen
+    com/huawei/android/hms/base/R$drawable
+    com/huawei/android/hms/base/R$id
+    com/huawei/android/hms/base/R$layout
+    com/huawei/android/hms/base/R$string
+    com/huawei/android/hms/base/R$style
+    com/huawei/android/hms/hwid/R
+    com/huawei/android/hms/hwid/R$attr
+    com/huawei/android/hms/hwid/R$color
+    com/huawei/android/hms/hwid/R$dimen
+    com/huawei/android/hms/hwid/R$drawable
+    com/huawei/android/hms/hwid/R$id
+    com/huawei/android/hms/hwid/R$layout
+    com/huawei/android/hms/hwid/R$string
+    com/huawei/android/hms/hwid/R$style
+    com/huawei/android/hms/hwid/R$styleable
+    com/huawei/android/powerkit/BuildConfig
+    com/huawei/android/powerkit/HuaweiPowerKit
+    com/huawei/android/powerkit/PowerKitConnection
+    com/huawei/android/powerkit/Sink
+    com/huawei/android/powerkit/adapter/IPowerKitApi
+    com/huawei/android/powerkit/adapter/IPowerKitApi$Stub
+    com/huawei/android/powerkit/adapter/IPowerKitApi$Stub$Proxy
+    com/huawei/android/powerkit/adapter/IStateSink
+    com/huawei/android/powerkit/adapter/IStateSink$Stub
+    com/huawei/android/powerkit/adapter/IStateSink$Stub$Proxy
+    com/huawei/android/powerkit/adapter/PowerKitApi
+    com/huawei/android/powerkit/adapter/PowerKitApi$1
+    com/huawei/android/powerkit/adapter/PowerKitApi$SinkTransport

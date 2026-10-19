@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hvr.displayrouting"
+    android:versionCode="2"
+    android:versionName="1.0">
+
+    <uses-sdk android:minSdkVersion="29" android:targetSdkVersion="34"/>
+
+    <application android:label="HVR 显示路由" android:allowBackup="false">
+        <meta-data android:name="xposedmodule" android:value="true"/>
+        <meta-data android:name="xposeddescription"
+            android:value="放行华为 VR 七包把 VR 活动启动到自建的 HUAWEI VR Display 虚拟屏上"/>
+        <meta-data android:name="xposedminversion" android:value="82"/>
+    </application>
+</manifest>

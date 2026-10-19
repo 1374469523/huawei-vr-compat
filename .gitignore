@@ -1,0 +1,20 @@
+# 归档仓库：解码树、固件、工具链与构建产物不入库
+# （原包/ 里六个 <100MB 的原始 APK 直接入库；
+#   111MB 的 com.huawei.himovie.vr.apk 超过 GitHub 单文件上限，
+#   放在 Release 附件 original-apks-v1 里，见 ARCHIVE.md；
+#   decode/ 属于逆向产物，按用户要求不入库，可由 原包/ 重建）
+原包/com.huawei.himovie.vr.apk
+decode/
+系统固件/
+工具链/
+
+build/out/
+build/evidence/
+build/*.apk
+build/*.png
+
+*.log
+*.idsig
+__pycache__/
+*.pyc
+.DS_Store
